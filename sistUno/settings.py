@@ -39,9 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Propio
-    'pago.apps.PagoConfig',
-    'solicitud.apps.SolicitudConfig',
-    'usuario.apps.UsuarioConfig',
+    'app.apps.AppConfig',
 ]
 
 MIDDLEWARE = [
