@@ -13,6 +13,7 @@ class Usuario(models.Model):
     apellido_materno = models.CharField(max_length=50)
     email = models.EmailField(max_length=60)
     contraseña = models.CharField(max_length=100)
+    foto_perfil = models.ImageField(blank=True, upload_to='usuario')
 
     def __str__(self):
         return self.nombres
@@ -20,6 +21,7 @@ class Usuario(models.Model):
 
 class Entidad_bancaria(models.Model):
     nombre = models.CharField(max_length=50)
+    logo = models.ImageField(blank=True, upload_to='entidades_bancarias')
 
     def __str__(self):
         return self.nombre
