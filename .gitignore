@@ -1,6 +1,6 @@
 *.pyc
+static/media/
 apps/deposito/migrations/
-apps/media/
 apps/pago/migrations/
 apps/principal/migrations/
 apps/solicitud/migrations/
