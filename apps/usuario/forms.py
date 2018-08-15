@@ -35,7 +35,7 @@ class UsuarioForm(forms.ModelForm):
             'apellido_materno': forms.TextInput(attrs={'class': 'form-control'}),
             'foto_perfil': forms.FileInput(),
             'dni_referido': forms.NumberInput(attrs={'class': 'form-control'}),
-            'contraseña': forms.TextInput(attrs={'class': 'form-control'}),
+            'contraseña': forms.TextInput(attrs={'class': 'form-control', 'type': 'password'}),
         }
 
 
