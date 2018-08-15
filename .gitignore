@@ -1,4 +1,4 @@
-.pyc
+*.pyc
 apps/deposito/migrations/
 apps/media/
 apps/pago/migrations/
