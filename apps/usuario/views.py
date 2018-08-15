@@ -15,6 +15,10 @@ def registrar_usuario(request):
     if request.method == 'POST':
         formUsuario = UsuarioForm(request.POST, request.FILES)
         formCuenta = CuentaUsuarioForm(request.POST)
+        context = {
+            'formUsuario': formUsuario,
+            'formCuenta': formCuenta,
+            }
         if formUsuario.is_valid() and formCuenta.is_valid():
             usuario = formUsuario.save()
             cuenta = formCuenta.save(False)
@@ -31,4 +35,5 @@ def registrar_usuario(request):
             'formUsuario': formUsuario,
             'formCuenta': formCuenta,
         }
-    return render(request, 'usuario/registrar.html', context)
+
+    return render(request, 'usuario/registrar.html', context=context)
