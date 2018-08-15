@@ -1,4 +1,23 @@
 {% extends 'base/base.html'%}
 {%block content%}
-<h1>asa</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-8 box-body">
+      jjshfs
+    </div>
+    <div class="col-md-4">
+      <form class="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" name="button">Guardar</button>
+      </form>
+    </div>
+  </div>
+
+
+  <div class="row">
+  <input type="text" class="form-control" name="" value="">
+  </div>
+</div>
 {%endblock%}

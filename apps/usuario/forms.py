@@ -7,7 +7,7 @@ class UsuarioForm(forms.ModelForm):
 
     class Meta:
         model = Usuario
-        
+
         fields = [
             'dni',
             'nombres',
@@ -25,17 +25,17 @@ class UsuarioForm(forms.ModelForm):
             'apellido_materno': 'Apellido materno',
             'foto_perfil': 'Foto de perfil',
             'dni_referido': 'DNI del referente',
-            'contraseña': 'Contraseña',            
+            'contraseña': 'Contraseña',
         }
 
         widgets = {
-            'dni': forms.NumberInput(attrs={'class': 'form-control'}),
-            'nombres': forms.TextInput(attrs={'class': 'form-control'}),
-            'apellido_paterno': forms.TextInput(attrs={'class': 'form-control'}),
-            'apellido_materno': forms.TextInput(attrs={'class': 'form-control'}),
+            'dni': forms.NumberInput(attrs={'class': 'form-control-p'}),
+            'nombres': forms.TextInput(attrs={'class': 'form-control-p'}),
+            'apellido_paterno': forms.TextInput(attrs={'class': 'form-control-p'}),
+            'apellido_materno': forms.TextInput(attrs={'class': 'form-control-p'}),
             'foto_perfil': forms.FileInput(),
-            'dni_referido': forms.NumberInput(attrs={'class': 'form-control'}),
-            'contraseña': forms.TextInput(attrs={'class': 'form-control', 'type': 'password'}),
+            'dni_referido': forms.NumberInput(attrs={'class': 'form-control-p'}),
+            'contraseña': forms.TextInput(attrs={'class': 'form-control-p', 'type': 'password'}),
         }
 
 
@@ -55,6 +55,6 @@ class CuentaUsuarioForm(forms.ModelForm):
         }
 
         widgets = {
-            'numero_cuenta': forms.TextInput(attrs={'class': 'form-control'}),
-            'entidad_bancaria': forms.Select(attrs={'class': 'form-control'}),
+            'numero_cuenta': forms.TextInput(attrs={'class': 'form-control-p'}),
+            'entidad_bancaria': forms.Select(attrs={'class': 'form-control-p'}),
         }
