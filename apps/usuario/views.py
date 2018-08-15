@@ -4,8 +4,8 @@ from .forms import UsuarioForm, CuentaUsuarioForm
 
 # Create your views here.
 
-def principal(request):
-    return render(request, 'principal/index.html')
+def login_usuario(request):
+    return render(request, 'usuario/login.html')
 
 def editar_usuario(request):
     return render(request, 'usuario/editar.html')
@@ -15,10 +15,6 @@ def registrar_usuario(request):
     if request.method == 'POST':
         formUsuario = UsuarioForm(request.POST, request.FILES)
         formCuenta = CuentaUsuarioForm(request.POST)
-        context = {
-            'formUsuario': formUsuario,
-            'formCuenta': formCuenta,
-            }
         if formUsuario.is_valid() and formCuenta.is_valid():
             usuario = formUsuario.save()
             cuenta = formCuenta.save(False)
@@ -26,14 +22,14 @@ def registrar_usuario(request):
             cuenta.usuario = usuario
             cuenta.save()
 
-            return redirect('principal')
+            return redirect('login')
     else:
         formUsuario = UsuarioForm()
         formCuenta = CuentaUsuarioForm()
 
-        context = {
-            'formUsuario': formUsuario,
-            'formCuenta': formCuenta,
-        }
+    context = {
+        'formUsuario': formUsuario,
+        'formCuenta': formCuenta,
+    }
 
     return render(request, 'usuario/registrar.html', context=context)
