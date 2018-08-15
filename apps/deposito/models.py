@@ -19,4 +19,4 @@ class Deposito(models.Model):
 
 class Banner(models.Model):
     titulo = models.CharField(max_length=100)
-    banner = models.ImageField(blank=True, upload_to='baner')
+    banner = models.ImageField(blank=True, upload_to='banner')

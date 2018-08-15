@@ -1,1 +1,16 @@
-<h1>Registrar usuario</h1>
+{% extends 'base/base.html' %}
+
+{% block header %}
+{% endblock %}
+
+{% block content %}
+<h1>Registrar Usuario</h1>
+
+<form enctype="multipart/form-data" method="POST">
+    {% csrf_token %}
+    {{ formUsuario.as_p }}
+    {{ formCuenta.as_p}}
+    <button type="submit">Guardar</button>
+</form>
+
+{% endblock %}

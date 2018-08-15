@@ -8,6 +8,7 @@ class Usuario(models.Model):
         primary_key=True,
         validators=[MinValueValidator(10000000), MaxValueValidator(99999999)],
         )
+    dni_referido = models.ForeignKey('self', on_delete=models.PROTECT, blank=True)
     nombres = models.CharField(max_length=50)
     apellido_paterno = models.CharField(max_length=50)
     apellido_materno = models.CharField(max_length=50)
@@ -31,7 +32,7 @@ class Cuenta_usuario(models.Model):
     numero_cuenta = models.IntegerField(primary_key=True)
     usuario = models.ForeignKey(Usuario, on_delete=models.PROTECT)
     entidad_bancaria = models.ForeignKey(Entidad_bancaria, on_delete=models.PROTECT)
-    saldo = models.DecimalField(max_digits=10, decimal_places=2)
+    saldo = models.DecimalField(max_digits=10, decimal_places=2, blank=True)
 
     def __str__(self):
         return str(self.numero_cuenta)
