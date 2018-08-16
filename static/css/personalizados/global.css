@@ -12,6 +12,9 @@
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
+.box-body{
+  margin-top: 10px;  
+}
 
 .box-register{
   font-family: 'calibri';
@@ -23,6 +26,7 @@
   padding-bottom: 10px;
   padding-top: 10px;
 }
+
 
 .box-register label{
   font-weight: bold;

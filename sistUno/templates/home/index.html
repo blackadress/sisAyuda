@@ -2,15 +2,28 @@
 {%block content%}
 <div class="container-fluid">
   <div class="row">
+    <div class="col-md-1">
+      
+    </div>
+
     <div class="col-md-8 box-body">
       jjshfs
     </div>
-    <div class="col-md-4 box-register small">
+    <div class="col-md-3 box-register small">
       <form class="" method="post">
         {% csrf_token %}
-        {{ form.as_p }}
 
-        <button type="submit" name="button" class="btn btn-primary btn-sm">Registrar</button>
+        <div class="form-group">
+          <label for="id_correo">Correo electrónico</label>
+          <input type="email" id="id_correo" name="email" placeholder="Correo electrónico" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="id_contrasena">Contraseña</label>
+          <input type="password" id="id_contrasena" name="email" placeholder="Contraseña" class="form-control">
+        </div>
+
+        <button type="submit" name="button" class="btn btn-primary btn-sm">Ingresar</button>
+        <a href="#">¿No tienes una cuenta? Registrate</a>
       </form>
     </div>
   </div>
