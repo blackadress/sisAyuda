@@ -3,6 +3,7 @@ from django.contrib import admin
 
 from . import views
 
+app_name='usuario'
 urlpatterns = [
     path('login/', views.login_usuario, name='login'),
     path('editar/', views.editar_usuario, name='editar_usuario '),

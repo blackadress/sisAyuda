@@ -20,13 +20,14 @@
 
           {% csrf_token %}
           {{ formUsuario.as_p }}
-
+          <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
+          <a href="{% url 'home:index' %}">Ya tengo una cuenta</a>
       </form>
-      <h6>Búsqueda de usuario referencia</h6>
+      <hr>
+      <h6><b>Búsqueda de usuario referencia</b></h6>
       <input type="text" id="busqueda" name="busqueda" class="form-control-p">
-<hr>
-      <button type="submit" class="btn btn-primary btn-sm">Guardar</button>
-      <a href="#">Ya tengo una cuenta</a>
+
+
 
       <ul id="resultados-busqueda">
 
