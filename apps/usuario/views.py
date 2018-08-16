@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 
-from .forms import UsuarioForm, CuentaUsuarioForm
+from .forms import NuevoUsuarioForm
 
 # Create your views here.
 
@@ -13,23 +13,22 @@ def editar_usuario(request):
 
 def registrar_usuario(request):
     if request.method == 'POST':
-        formUsuario = UsuarioForm(request.POST, request.FILES)
-        formCuenta = CuentaUsuarioForm(request.POST)
-        if formUsuario.is_valid() and formCuenta.is_valid():
-            usuario = formUsuario.save()
-            cuenta = formCuenta.save(False)
-
-            cuenta.usuario = usuario
-            cuenta.save()
-
+        formUsuario = NuevoUsuarioForm(request.POST, request.FILES)
+        if formUsuario.is_valid():
+            formUsuario.save()
             return redirect('login')
     else:
-        formUsuario = UsuarioForm()
-        formCuenta = CuentaUsuarioForm()
+        formUsuario = NuevoUsuarioForm()
 
     context = {
         'formUsuario': formUsuario,
-        'formCuenta': formCuenta,
     }
 
     return render(request, 'usuario/registrar.html', context=context)
+
+
+# def buscar_usuario(request):
+#     if request.method == 'POST':
+#         busqueda = 
+
+#     return render(request, 'usuario/buscar.html')

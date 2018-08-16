@@ -9,7 +9,6 @@
 <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
     {{ formUsuario.as_p }}
-    {{ formCuenta.as_p}}
     <button type="submit">Guardar</button>
 </form>
 

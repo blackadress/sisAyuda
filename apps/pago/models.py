@@ -1,15 +1,15 @@
 from django.db import models
 
-from apps.usuario.models import Cuenta_usuario
+from apps.usuario.models import Usuario
 
 # Create your models here.
 
 class Pago(models.Model):
-    cuenta_usuario_asignado = models.ForeignKey(Cuenta_usuario, related_name='CuentaUsuarioAsignado',on_delete=models.PROTECT)
-    cuenta_usuario = models.ForeignKey(Cuenta_usuario, related_name='CuentaUsuarioPaga',on_delete=models.PROTECT)
+    usuario_asignado = models.ForeignKey(Usuario, related_name='UsuarioAsignado',on_delete=models.PROTECT)
+    usuario = models.ForeignKey(Usuario, related_name='UsuarioPaga',on_delete=models.PROTECT)
     monto = models.DecimalField(max_digits=10, decimal_places=2) # Quizas? este monto es el mismo en solicitud
     fecha = models.DateTimeField(auto_now=True)
     estado = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.cuenta_usuario + self.cuenta_usuario_asignado + self.monto
+        return self.usuario + self.usuario_asignado + self.monto
