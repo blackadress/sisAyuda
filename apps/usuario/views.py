@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 
 from .forms import NuevoUsuarioForm
 from .models import Usuario
+from apps.home.models import Banner
 
 # Create your views here.
 
@@ -20,9 +21,9 @@ def registrar_usuario(request):
             return redirect('home:index')
     else:
         formUsuario = NuevoUsuarioForm()
-
+    banner = Banner.objects.all()
     context = {
-        'formUsuario': formUsuario,
+        'formUsuario': formUsuario,'banner':banner,
     }
 
     return render(request, 'usuario/registrar.html', context=context)
