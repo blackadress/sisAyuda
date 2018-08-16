@@ -17,7 +17,7 @@ def registrar_usuario(request):
         formUsuario = NuevoUsuarioForm(request.POST, request.FILES)
         if formUsuario.is_valid():
             formUsuario.save()
-            return redirect('login')
+            return redirect('home:index')
     else:
         formUsuario = NuevoUsuarioForm()
 
@@ -36,7 +36,7 @@ def buscar_usuario(request):
             busqueda = ''
     else:
         busqueda = ''
-    
+
     usuarios = Usuario.objects.filter(nombres__contains=busqueda)
 
     context = {

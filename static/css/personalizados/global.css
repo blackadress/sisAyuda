@@ -13,10 +13,10 @@
 }
 
 .box-body{
-  margin-top: 10px;  
+  margin-top: 10px;
 }
 
-.box-register{
+.box-login{
   font-family: 'calibri';
   margin-top: 10px;
   border-style: solid;
@@ -27,7 +27,6 @@
   padding-top: 10px;
 }
 
-
-.box-register label{
+.box-login label{
   font-weight: bold;
 }
