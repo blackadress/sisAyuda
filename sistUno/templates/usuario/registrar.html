@@ -5,11 +5,42 @@
 
 {% block content %}
 <h1>Registrar Usuario</h1>
-
+ 
+<!-- div col-md-8 ? -->
 <form enctype="multipart/form-data" method="POST">
     {% csrf_token %}
     {{ formUsuario.as_p }}
     <button type="submit">Guardar</button>
 </form>
+
+<!-- div col-md-4 -->
+<h3>Búsqueda de usuario referencia</h3>
+<input type="text" id="busqueda" name="busqueda">
+
+<ul id="resultados-busqueda">
+
+</ul>
+
+
+<script>
+    $(function() {
+        $('#busqueda').keyup(function() {
+            $.ajax({
+                type: "POST",
+                url: "/Usuario/buscar-usuario/",
+                data: {
+                    'search_text' : $('#busqueda').val(),
+                    'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                },
+                success: searchSuccess,
+                dataType: 'html'
+            });
+        });
+    });
+
+    function searchSuccess(data, textStatus, jqXHR) {
+        $('#resultados-busqueda').html(data);
+    }
+</script>
 
 {% endblock %}

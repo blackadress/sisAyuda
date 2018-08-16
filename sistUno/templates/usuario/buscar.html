@@ -1,10 +1,12 @@
 {% if usuarios.count > 0 %}
 
 {% for usuario in usuarios %}
-    <li>{{ usuario.dni }}</li>
-    <li>{{ usuario.nombres }}</li>
-    <li>{{ usuario.apellido_paterno }}</li>
-    <li>{{ usuario.apellido_materno }}</li>
+<div>
+    <li>DNI del usuario de referencia: {{ usuario.dni }}</li>
+    <li>Nombre(s): {{ usuario.nombres }}</li>
+    <li>Apellido: {{ usuario.apellido_paterno }} {{ usuario.apellido_materno }}</li>
+    <br>
+</div>
 {% endfor %}
 
 {% else %}

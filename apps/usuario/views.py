@@ -30,7 +30,10 @@ def registrar_usuario(request):
 
 def buscar_usuario(request):
     if request.method == 'POST':
-        busqueda = request.POST['busqueda']
+        if 'busqueda' in request.POST:
+            busqueda = request.POST['is_private']
+        else:
+            busqueda = ''
     else:
         busqueda = ''
     
