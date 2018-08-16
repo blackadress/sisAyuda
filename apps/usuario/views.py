@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 
 from .forms import NuevoUsuarioForm
+from .models import Usuario
 
 # Create your views here.
 
@@ -27,8 +28,16 @@ def registrar_usuario(request):
     return render(request, 'usuario/registrar.html', context=context)
 
 
-# def buscar_usuario(request):
-#     if request.method == 'POST':
-#         busqueda = 
+def buscar_usuario(request):
+    if request.method == 'POST':
+        busqueda = request.POST['busqueda']
+    else:
+        busqueda = ''
+    
+    usuarios = Usuario.objects.filter(nombres__contains=busqueda)
 
-#     return render(request, 'usuario/buscar.html')
+    context = {
+        'usuarios': usuarios
+    }
+
+    return render(request, 'usuario/buscar.html', context)
