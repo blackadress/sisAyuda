@@ -25,6 +25,7 @@
       </form>
       <hr>
       <h6><b>Búsqueda de usuario referencia</b></h6>
+
       <input type="text" id="busqueda" name="busqueda" class="form-control-p">
 
 
@@ -44,16 +45,21 @@
 <script>
     $(function() {
         $('#busqueda').keyup(function() {
-            $.ajax({
-                type: "POST",
-                url: "/Usuario/buscar-usuario/",
-                data: {
-                    'search_text' : $('#busqueda').val(),
-                    'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
-                },
-                success: searchSuccess,
-                dataType: 'html'
-            });
+            console.log($(this).val())
+            var txt = $(this).val();
+            if (txt === '') {}
+            else {
+                $.ajax({
+                    type: "POST",
+                    url: "/Usuario/buscar-usuario/",
+                    data: {
+                        'busqueda' : $('#busqueda').val(),
+                        'csrfmiddlewaretoken' : $("input[name=csrfmiddlewaretoken]").val()
+                    },
+                    success: searchSuccess,
+                    dataType: 'html'
+                });
+            }
         });
     });
 
