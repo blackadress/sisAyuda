@@ -1,5 +1,4 @@
 *.pyc
-static/media/
 apps/deposito/migrations/
 apps/pago/migrations/
 apps/principal/migrations/
