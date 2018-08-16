@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     'apps.pago',
     'apps.solicitud',
     'apps.usuario',
-    'apps.principal',
+    'apps.home',
 ]
 
 MIDDLEWARE = [
