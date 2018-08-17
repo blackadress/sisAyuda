@@ -1,14 +1,15 @@
 {% extends 'base/base.html'%}
+{% load staticfiles%}
 {%block content%}
 <div class="container">
   <div class="row">
-    <div class="col-md-1">
+    <!-- <div class="col-md-1">
 
-    </div>
-
-    <div class="col-md-8 box-body">
-      jjshfs
-    </div>
+    </div> -->
+  <div class="col-md-9 box-body">
+  {% include 'home/body.html'%}
+  </div>
+    <!-- LOGIN FORM -->
     <div class="col-md-3 box-login small">
       <h4>Ingresar</h4>
       <hr>
@@ -28,11 +29,11 @@
         <a href="{% url 'usuario:registrar_usuario'%}">¿No tienes una cuenta? Registrate</a>
       </form>
     </div>
+    <!-- END LOGIN FORM -->
   </div>
 
 
-  <div class="row">
-  <input type="text" class="form-control" name="" value="">
-  </div>
-</div>
+
+  
+
 {%endblock%}
